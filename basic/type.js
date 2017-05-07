@@ -1,3 +1,5 @@
+"use strict";
+
 var i = 10;
 var j = "hello";
 var k = true;
@@ -28,3 +30,9 @@ console.log("array is " + array);
 array.forEach(function(item,index){
     console.log("array["+index+"] is " + item);
 });
+
+
+// it prints undefined instead of giving an error.
+console.log(aUndefinedVariable);
+var aUndefinedVariable = 10;
+

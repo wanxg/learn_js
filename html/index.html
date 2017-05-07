@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Test WebSite</title>
+    <script src="https://unpkg.com/vue"></script>
+
+</head>
+
+<body>
+
+    <h1>I am learning javascript and Vue!</h1>
+    <p>This is a paragraph.</p>
+
+    <script type="text/javascript">
+        document.write("Hello World")
+    </script>
+
+    <div id="app">
+        {{ message1 }}
+    </div>
+
+    <div id="app1">
+        <span v-bind:title="message">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!!
+        </span>
+    </div>
+
+    <div id="app2">
+        User name:
+        <input v-if="seen" type="text" name="text"></input>
+        <input type="button" value="Submit" ></input>
+    </div>
+
+
+    <script src="myvue.js"></script>
+</body>
+
+</html>
