@@ -36,3 +36,12 @@ executor(myFunc1,myFunc2);
     console.log(`Printing global variable defined in other function:  ${global3}`);
 
 })("Xiaolong");
+
+
+function myFunc3(){
+
+    console.log(this);
+}
+
+//myFunc3();  -> this refers to the global object of node.js
+myFunc3.call({msg:'I am a object refered by \'this\''});

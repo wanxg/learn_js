@@ -1,39 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>My Test WebSite</title>
-    <script src="https://unpkg.com/vue"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My WebSite</title>
+    <script src="Vue.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jumbotron-narrow.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <h1>I am learning javascript and Vue!</h1>
-    <p>This is a paragraph.</p>
 
-    <script type="text/javascript">
-        document.write("Hello World")
-    </script>
+    <div class="container">
 
-    <div id="app">
-        {{ message1 }}
+
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">About</a></li>
+                    <li role="presentation"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Learning Javascript and Vue</h3>
+        </div>
+
+
+        <div id="app" class="jumbotron">
+            <div v-html="html"></div>
+            <h2>Vue Declarative Rendering</h2>
+                <p class="lead">{{ message }}</p>
+                <p><a v-bind:class="buttonProp" href="#" role="button" v-on:click="reverseMsg">{{ message.split('').reverse().join('') }}</a></p>
+        </div>
+
+
+        <div id="app1" class="jumbotron">
+            <h2 v-if="show">Conditionals and Loops</h2>
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info" v-for="fruit in fruits">
+                    {{fruit.text}}
+                </li>
+            </ul>
+        </div>
+
+        <div id="app2" class="jumbotron">
+            <h2 v-if="seen">Handling User Input</h2>
+            <button v-on:click="hideAndShow" type="button" class="btn btn-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    {{buttonText}}
+            </button>
+            <input v-model="buttonText">
+        </div>
+
+
+
+
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <h4>Subheading</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+            </div>
+        </div>
+
+
+
+
+        <footer class="footer">
+            <p>&copy; 2017 Company, Inc.</p>
+        </footer>
+
     </div>
-
-    <div id="app1">
-        <span v-bind:title="message">
-        Hover your mouse over me for a few seconds
-        to see my dynamically bound title!!
-        </span>
-    </div>
-
-    <div id="app2">
-        User name:
-        <input v-if="seen" type="text" name="text"></input>
-        <input type="button" value="Submit" ></input>
-    </div>
-
 
     <script src="myvue.js"></script>
 </body>
